@@ -3,13 +3,14 @@ Summary:	Drupal Img_assist Module
 Summary(pl):	Modu³ Img_assist dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.7
+Release:	0.9
 Epoch:		0
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://drupal.org/files/projects/%{modname}-%{version}.tar.gz
 # Source0-md5:	4b1c6d159005fee95ed40b6fd17085d4
 URL:		http://drupal.org/project/img_assist
+BuildRequires:	rpmbuild(macros) >= 1.194
 Requires:	drupal >= 4.6.0
 Requires:	drupal-mod-image
 Requires:	drupal-mod-upload
@@ -51,12 +52,23 @@ install -d $RPM_BUILD_ROOT{%{_moddir},%{_htmldir}}
 
 install *.module $RPM_BUILD_ROOT%{_moddir}
 install *.css *.js *.jpg $RPM_BUILD_ROOT%{_htmldir}
+ln -s ../htdocs/modules/directory.js $RPM_BUILD_ROOT%{_moddir}
+ln -s ../htdocs/modules/properties.js $RPM_BUILD_ROOT%{_moddir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+if [ "$1" = 1 ]; then
+%banner -e %{name} <<EOF
+To create tables needed for Drupal Img Assist module, issue these commands:
+zcat %{_docdir}/%{name}-%{version}/%{modname}.mysql.gz | mysql drupal
+EOF
+fi
 
 %files
 %defattr(644,root,root,755)
 %doc *.txt img_assist.{mysql,pgsql}
 %{_moddir}/*.module
+%{_moddir}/*.js
 %{_htmldir}/*.*
