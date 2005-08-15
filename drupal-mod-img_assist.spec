@@ -3,7 +3,7 @@ Summary:	Drupal Img_assist Module
 Summary(pl):	Modu³ Img_assist dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.10
+Release:	0.11
 Epoch:		0
 License:	GPL
 Group:		Applications/WWW
@@ -17,7 +17,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_moddir		%{_datadir}/drupal/modules
-%define		_htmldir	%{_datadir}/drupal/htdocs/modules
+%define		_htmlmoddir	%{_datadir}/drupal/htdocs/modules
 
 %description
 This module generates an image icon next to the textarea fields of you
@@ -47,10 +47,10 @@ rm -f LICENSE.txt # pure GPL
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_moddir},%{_htmldir}}
+install -d $RPM_BUILD_ROOT{%{_moddir},%{_htmlmoddir}}
 
 install *.module $RPM_BUILD_ROOT%{_moddir}
-install *.css *.js *.jpg $RPM_BUILD_ROOT%{_htmldir}
+install *.css *.js *.jpg $RPM_BUILD_ROOT%{_htmlmoddir}
 ln -s ../htdocs/modules/directory.js $RPM_BUILD_ROOT%{_moddir}
 ln -s ../htdocs/modules/properties.js $RPM_BUILD_ROOT%{_moddir}
 
@@ -70,4 +70,4 @@ fi
 %doc *.txt img_assist.{mysql,pgsql}
 %{_moddir}/*.module
 %{_moddir}/*.js
-%{_htmldir}/*.*
+%{_htmlmoddir}/*.*
