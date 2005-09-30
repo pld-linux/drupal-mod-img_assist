@@ -3,8 +3,7 @@ Summary:	Drupal Img_assist Module
 Summary(pl):	Modu³ Img_assist dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.11
-Epoch:		0
+Release:	0.16
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://drupal.org/files/projects/%{modname}-%{version}.tar.gz
@@ -16,8 +15,10 @@ Requires:	drupal-mod-image
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_moddir		%{_datadir}/drupal/modules
-%define		_htmlmoddir	%{_datadir}/drupal/htdocs/modules
+%define		_drupaldir	%{_datadir}/drupal
+%define		_moddir		%{_drupaldir}/modules
+%define		_htdocs		%{_drupaldir}/htdocs
+%define		_htmlmoddir	%{_htdocs}/modules
 
 %description
 This module generates an image icon next to the textarea fields of you
