@@ -3,11 +3,11 @@ Summary:	Drupal Img_assist Module
 Summary(pl):	Modu³ Img_assist dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.16
+Release:	0.17
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://drupal.org/files/projects/%{modname}-%{version}.tar.gz
-# Source0-md5:	4b1c6d159005fee95ed40b6fd17085d4
+# Source0-md5:	4a38eb192ea4e1276ee6043067271003
 URL:		http://drupal.org/project/img_assist
 BuildRequires:	rpmbuild(macros) >= 1.194
 Requires:	drupal >= 4.6.0
