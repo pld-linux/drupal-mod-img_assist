@@ -1,6 +1,6 @@
 %define		modname img_assist
 Summary:	Drupal Img_assist Module
-Summary(pl.UTF-8):   Moduł Img_assist dla Drupala
+Summary(pl.UTF-8):	Moduł Img_assist dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
 Release:	0.17
