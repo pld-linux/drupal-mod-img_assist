@@ -1,6 +1,6 @@
 %define		modname img_assist
 Summary:	Drupal Img_assist Module
-Summary(pl):	Modu³ Img_assist dla Drupala
+Summary(pl.UTF-8):   ModuÅ‚ Img_assist dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
 Release:	0.17
@@ -31,16 +31,16 @@ Img_assist can also be used when adding images from a rich-text
 editor. This feature currently exists for TinyMCE. Support for
 Htmlarea is also planned.
 
-%description -l pl
-Ten modu³ generuje ikony przy wybranych polach tekstowych. Klikniêcie
-ikony otwiera okno przegl±dania obrazków, wy¶wietlaj±c wszystkie
-obrazki umieszczone poprzez modu³ image, modu³ upload albo img_assist.
-Obrazki mog± byæ filtrowane po w³a¶cicielu lub warunkach
+%description -l pl.UTF-8
+Ten moduÅ‚ generuje ikony przy wybranych polach tekstowych. KlikniÄ™cie
+ikony otwiera okno przeglÄ…dania obrazkÃ³w, wyÅ›wietlajÄ…c wszystkie
+obrazki umieszczone poprzez moduÅ‚ image, moduÅ‚ upload albo img_assist.
+Obrazki mogÄ… byÄ‡ filtrowane po wÅ‚aÅ›cicielu lub warunkach
 systematycznych (kategoriach).
 
-Img_assist mo¿na tak¿e u¿ywaæ do dodawania obrazków z edytora
+Img_assist moÅ¼na takÅ¼e uÅ¼ywaÄ‡ do dodawania obrazkÃ³w z edytora
 rich-tekstu. Ta opcja aktualnie istnieje dla TinyMCE. Planowana jest
-tak¿e obs³uga Htmlarea.
+takÅ¼e obsÅ‚uga Htmlarea.
 
 %prep
 %setup -q -n %{modname}
